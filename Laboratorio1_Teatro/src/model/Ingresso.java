@@ -16,6 +16,9 @@ public abstract class Ingresso {
 	
 	public abstract double getValor();
 	
+	/*
+	 * Cuidado como uso de membros estáticos.
+	 */
 	public static int getQuantidade() {
 		return quantidade;
 

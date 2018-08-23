@@ -17,13 +17,20 @@ public class Main {
 		do { 
 			JOptionPane.showMessageDialog(null, "Temos " +model.Ingresso.getQuantidade() + " ingressos disponiveis.", "Ingressos do Teatro POO", JOptionPane.INFORMATION_MESSAGE);
 			JOptionPane.showMessageDialog(null, "Vendas de ingressos", "Ingressos do Teatro POO", JOptionPane.INFORMATION_MESSAGE);
+			/*
+			 * A solução do problema não é inserir lógica de negócio na camada de interação
+			 * com o usuário.
+			 * 
+			 * Se o Main for substituído por uma Tela o sistema continuará com erro pois a quantidade
+			 * de fileiras e cadeiras não são definidas aqui. 
+			 */
 			do {
 				fileira = Integer.parseInt(JOptionPane.showInputDialog("Fileira", 0));
 			}while ((fileira > 10) || (fileira < 1));
 			do {
 				assento = Integer.parseInt(JOptionPane.showInputDialog("Assento", 0));
 			}while((assento > 20) || (assento < 1));
-			inteira = JOptionPane.showConfirmDialog(null, "Ingresso pre�o integral?", "Ingressos do Teatro POO", JOptionPane.YES_NO_OPTION);
+			inteira = JOptionPane.showConfirmDialog(null, "Ingresso pre�o integral?", "Ingressos do Teatro POO", JOptionPane.YES_NO_OPTION);
 			if(inteira == JOptionPane.YES_NO_OPTION){
 				vendeu = vendas.novaVenda(fileira, assento, Vendas.INTEIRA);
 			}else {
@@ -38,7 +45,7 @@ public class Main {
 			if(!vendeu) {
 				JOptionPane.showMessageDialog(null,  "Cadeira ocupada", "Ingresso do Teatro POO", JOptionPane.ERROR_MESSAGE);
 			}else {
-				JOptionPane.showMessageDialog(null,  "Bom espet�culo", "Ingresso do Teatro POO", JOptionPane.WARNING_MESSAGE);
+				JOptionPane.showMessageDialog(null,  "Bom espet�culo", "Ingresso do Teatro POO", JOptionPane.WARNING_MESSAGE);
 			}
 			
 		}while(JOptionPane.showConfirmDialog(null,  "Deseja encerrar o sistema?", "Ingressos do Teatro POO", JOptionPane.YES_NO_OPTION) == JOptionPane.NO_OPTION);

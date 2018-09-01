@@ -26,11 +26,14 @@ public class Teatro {
 		boolean deuCerto = false;
 
 		cadeira = buscaCadeira(fila, assento);
-		if(cadeira.estaLivre()){
-			cadeira.ocupar();
-			deuCerto = true;
+		if(cadeira != null) {
+			if(cadeira.estaLivre()){
+				cadeira.ocupar();
+				deuCerto = true;
+			}
 		}
 		return deuCerto;
+
 	}
 	
 	public Cadeira buscaCadeira(int fila, int assento){
